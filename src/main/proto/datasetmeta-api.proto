@@ -8,7 +8,7 @@ message DatasetId {
     int64 version = 6; // time-based
 }
 
-message Dataset {
+message DatasetMeta {
     DatasetId id = 2;
     enum Type {
         BOUNDED = 0;
@@ -43,11 +43,6 @@ message VarPseudoConfigItem {
     string pseudoFunc = 2;
 }
 
-message SecretPseudoConfigItem {
-    string id = 1;
-}
-
 message PseudoConfig {
     repeated VarPseudoConfigItem vars = 1;
-    repeated SecretPseudoConfigItem secrets = 2;
 }
