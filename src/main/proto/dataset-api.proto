@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "no.ssb.dapla.dataset.api";
+
+message DatasetId {
+    string path = 3;
+    int64 version = 6; // time-based
+}
+
+message Dataset {
+    DatasetId id = 2;
+    enum Type {
+        BOUNDED = 0;
+        UNBOUNDED = 1;
+    }
+    Type type = 3;
+    enum Valuation {
+        SENSITIVE = 0;
+        SHIELDED = 1;
+        INTERNAL = 2;
+        OPEN = 3;
+    }
+    Valuation valuation = 4;
+    enum DatasetState {
+        OTHER = 0;
+        RAW = 1;
+        INPUT = 2;
+        PROCESSED = 3;
+        OUTPUT = 4;
+        PRODUCT = 5;
+    }
+    DatasetState state = 6;
+    string parentUri = 8;
+
+    PseudoConfig pseudoConfig = 10;
+
+    string createdBy = 11;
+}
+
+message VarPseudoConfigItem {
+    string var = 1;
+    string pseudoFunc = 2;
+}
+
+message SecretPseudoConfigItem {
+    string id = 1;
+}
+
+message PseudoConfig {
+    repeated VarPseudoConfigItem vars = 1;
+    repeated SecretPseudoConfigItem secrets = 2;
+}
