@@ -49,3 +49,18 @@ message VarPseudoConfigItem {
 message PseudoConfig {
     repeated VarPseudoConfigItem vars = 1;
 }
+
+// Metadata containing all fields including parentUri
+message DatasetMetaAll {
+    DatasetId id = 2;
+    Type type = 3;
+    Valuation valuation = 4;
+    DatasetState state = 6;
+
+    PseudoConfig pseudoConfig = 10;
+
+    string createdBy = 11;
+
+    string random = 13;
+    string parentUri = 14;
+}
