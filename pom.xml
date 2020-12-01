@@ -3,7 +3,7 @@
 
     <groupId>no.ssb.dapla</groupId>
     <artifactId>dataset-api</artifactId>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.4</version>
     <packaging>multi-release-jar</packaging>
     <name>${project.artifactId}</name>
 
@@ -23,7 +23,7 @@
         <connection>scm:git:git://github.com/statisticsnorway/dataset-api.git</connection>
         <developerConnection>scm:git:git@github.com:statisticsnorway/dataset-api.git</developerConnection>
         <url>https://github.com/statisticsnorway/dataset-api</url>
-        <tag>HEAD</tag>
+        <tag>dataset-api-0.4</tag>
     </scm>
 
     <dependencies>
